@@ -83,7 +83,7 @@ module Nanoc
 
         # ... if not, recreate the relative path to referenced file from
         # the current file path.
-        current_path = Pathname.new(File.dirname(current_item.path.sub(/^\//, '')))
+        current_path = Pathname.new(current_item.path.sub(/^\//, ''))
         target_path  = Pathname.new(File.dirname(matching_item.path.sub(/^\//, '')))
         output_reference = target_path.relative_path_from(current_path).join(File.basename(matching_item.path))
       end
